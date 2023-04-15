@@ -1,0 +1,63 @@
+include:
+  - project: 'ece651proj/ci-templates'
+    file: 
+        - 'stages.yml'
+        - 'build_jobs.yml'
+
+sanity_build:   
+    extends: .sanity_build
+
+Build:
+  tags:
+    - ece651
+  image: node:19-alpine3.16
+  stage: build
+  script:
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - npm install
+    - npm run build
+    - ls -al
+  artifacts:
+    paths:
+      - build/
+
+Test:
+  tags:
+    - ece651
+  image: node:19-alpine3.16
+  stage: test
+  script:
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - npm install
+    - npm test -- --coverage . --collectCoverageFrom="./src/**"
+  artifacts:
+    paths:
+      - coverage/
+  allow_failure: true
+
+Coverage:
+  tags:
+    - ece651
+  image: sonarsource/sonar-scanner-cli
+  stage: posttest
+  script:
+    - ls -al coverage/
+    - apk update && apk add gettext
+    - export tag=$(awk '/version/{print $2; exit;}' package.json | cut -d '"' -f 2)
+    - envsubst < sonar-project.properties > ./config && mv ./config sonar-project.properties
+    - sonar-scanner
+  allow_failure: true
+
+Deploy:
+  tags:
+    - ece651
+  image: mcr.microsoft.com/azure-cli
+  stage: deploy
+  script:
+    - ls -al
+    - az login --service-principal -u $AZ_SP_ID -p $AZ_SP_SEC --tenant $AZ_TENANT
+    - az config set extension.use_dynamic_install=yes_without_prompt
+    - az storage azcopy blob upload -c '$web' -s "build/*" --connection-string $AZ_STA_CONN --recursive
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+      when: always

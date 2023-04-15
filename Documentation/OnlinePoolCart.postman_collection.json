@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "3bac20ec-933f-43a8-bbd0-73d1c01f04a8",
+		"name": "OnlinePoolCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "authority: pricehistory.in",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "method: POST",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "path: /api/productHistory",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "scheme: https",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": " application/json, text/javascript, */*; q=0.01",
+						"type": "text"
+					},
+					{
+						"key": "accept-encoding",
+						"value": " gzip, deflate, br",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept-language",
+						"value": " en-GB,en-US;q=0.9,en;q=0.8",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "authorization",
+						"value": " Basic YWpheDp0cnVlLTE1OTk5NzYwMDk=",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "content-length",
+						"value": " 372",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "content-type",
+						"value": " application/x-www-form-urlencoded; charset=UTF-8",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": " __cfduid=d92a6596b980c3c87dea6365d2879b23a1599974849; _ga=GA1.2.960181529.1599974851; _gid=GA1.2.1389566990.1599974851; XSRF-TOKEN=eyJpdiI6IitqVUVhQjFOeVBiNDQxbTAwKzBMTEE9PSIsInZhbHVlIjoiZGNGcVZLNmNVeGNmcDNFdU1haUZjSW5hQXhVd1dERTljSllZVWcwZzNKRVVueTVPR0FlODZoZ0w0NGhQQ1BFVCIsIm1hYyI6ImVlNDFmY2JkYmU2MTIwYTNhMDMxMTQ0MTI4YWRmMjVjOTljNWRjYWY3ZmRjMzFiMTA5OWU5ZTEyYzgxNDY2ODEifQ%3D%3D; price_history_session=eyJpdiI6Im9PRjZkTVhVcVdtcEUxdkFhVUYyTWc9PSIsInZhbHVlIjoiOHJ3aW9HVHdjKy9Pd0RyeDByOFFKbFZGc2VHMU5la0JyOVROb29OSUJlZnNDeGRGM2hvR0IvNXYxZUJscDJqayIsIm1hYyI6ImE0YTE4Zjk3MGZlOTgxZjc0NjA2MDBlNmI3MDk3MDI3MDYyNDEyNDg4MGUyMWJlNDgxYzAxZjJiYWVmNjM1MGYifQ%3D%3D; _gat_gtag_UA_50001635_52=1",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": " https://pricehistory.in",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": " https://pricehistory.in/",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": " empty",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": " cors",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": " same-origin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-requested-with",
+						"value": " XMLHttpRequest",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"aryan\",\n    \"last_name\": \"kanwar\",\n    \"email\": \"a3@k.com\",\n    \"password\": \"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"a3@k.com\",\n    \"password\": \"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

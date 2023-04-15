@@ -1,0 +1,12 @@
+.navlink {
+    display: flex;
+    gap:2rem;
+    align-items: center;
+    flex-direction: column;
+    background:var(--color-white);
+    position: absolute;
+    top:57px;
+    right:0px;
+    width:100vw;
+    opacity: 1; 
+}

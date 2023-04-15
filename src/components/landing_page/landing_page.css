@@ -1,0 +1,8 @@
+.landing_page {
+    display:flex;
+    background-color:rgb(151, 232, 247);
+    border-radius: 1rem;
+    align-items:center;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    margin-left: 12.81rem;
+}
